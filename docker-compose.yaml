@@ -1,0 +1,12 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=member
+      - POSTGRES_PASSWORD=welcome
+      - POSTGRES_DB=member
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis

@@ -1,0 +1,18 @@
+version: "3"
+
+env:
+  APP_DB_URL: postgresql://member:welcome@localhost:5432/member?sslmode=disable
+
+dotenv:
+  - .env
+
+tasks:
+  container-up:
+    cmds:
+      - docker-compose up -d
+  container-down:
+    cmds:
+      - docker-compose down --remove-orphans --volumes
+  test:
+    cmds:
+      - go test -v -cover ./...
