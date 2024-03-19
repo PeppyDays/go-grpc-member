@@ -7,7 +7,7 @@ import (
 )
 
 type Member struct {
-	ID             string
+	ID             uuid.UUID
 	Email          Email
 	Password       Password
 	CreatedAt      time.Time
@@ -22,7 +22,7 @@ func NewMember(email Email, password Password) *Member {
 }
 
 func (m *Member) Register() {
-	m.ID = uuid.NewString()
+	m.ID, _ = uuid.NewUUID()
 	m.CreatedAt = time.Now().UTC()
 }
 
