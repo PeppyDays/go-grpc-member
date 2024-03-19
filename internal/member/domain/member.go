@@ -14,14 +14,15 @@ type Member struct {
 	LastSignedInAt time.Time
 }
 
-func NewMember(id string, email Email, password Password, createdAt time.Time, LastSignedInAt time.Time) *Member {
-	return &Member{}
+func NewMember(email Email, password Password) *Member {
+	return &Member{
+		Email:    email,
+		Password: password,
+	}
 }
 
-func (m *Member) Register(email Email, password Password) {
+func (m *Member) Register() {
 	m.ID = uuid.NewString()
-	m.Email = email
-	m.Password = password
 	m.CreatedAt = time.Now().UTC()
 }
 
