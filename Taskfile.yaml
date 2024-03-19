@@ -16,3 +16,6 @@ tasks:
   test:
     cmds:
       - go test -v -cover ./...
+  pkl-gen:
+    cmds:
+      - pkl-gen-go configs/Application.pkl
