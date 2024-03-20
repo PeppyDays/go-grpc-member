@@ -19,3 +19,13 @@ tasks:
   pkl-gen:
     cmds:
       - pkl-gen-go configs/Application.pkl
+  proto-gen:
+    cmds:
+      - |
+        protoc \
+        --proto_path=pkg/proto \
+        --go_out=pkg/contract \
+        --go_opt=paths=source_relative \
+        --go-grpc_out=pkg/contract \
+        --go-grpc_opt=paths=source_relative \
+        health.proto member.proto

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package grpc.member.health.v1;
+
+option go_package = "github.com/peppydays/go-rpc-member/pkg/contract";
+
+message HealthCheckRequest {}
+
+message HealthCheckResponse {
+  enum ServiceStatus {
+    UNKNOWN = 0;
+    SERVING = 1;
+    NOT_SERVING = 2;
+  }
+  ServiceStatus status = 1;
+}
+
+service Health {
+  rpc Check(HealthCheckRequest) returns (HealthCheckResponse);
+}

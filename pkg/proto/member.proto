@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package grpc.member.member.v1;
+
+option go_package = "github.com/peppydays/go-rpc-member/pkg/contract";
+
+message SignUpRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message SignUpResponse {
+  string user_id = 1;
+}
+
+service Member {
+  rpc SignUp(SignUpRequest) returns (SignUpResponse);
+}

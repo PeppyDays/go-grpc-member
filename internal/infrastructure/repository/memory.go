@@ -3,10 +3,10 @@ package repository
 import (
 	"context"
 	"fmt"
+	"github.com/peppydays/go-grpc-member/internal/domain"
 	"sync"
 
 	"github.com/google/uuid"
-	"github.com/peppydays/go-grpc-member/internal/member/domain"
 )
 
 type MemoryRepository struct {

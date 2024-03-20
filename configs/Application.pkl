@@ -9,5 +9,5 @@ import "package://pkg.pkl-lang.org/pkl-go/pkl.golang@0.6.0#/go.pkl"
 host: String = read?("env:APP_HOST") ?? "127.0.0.1"
  
 /// The port to listen on
-port: UInt16(isBetween(0, 65535)) = read?("env:APP_PORT")?.toInt() ?? 9090
+port: UInt16(isBetween(0, 65535)) = read?("env:APP_PORT")?.toInt() ?? 50051
 
